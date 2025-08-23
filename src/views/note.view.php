@@ -6,7 +6,7 @@
      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 text-white">
 
          <p class="block rounded-lg bg-gray-800 p-6 hover:bg-gray-700 transition-colors">
-             <?php echo htmlspecialchars($note['body']) ?>
+             <?= htmlspecialchars($note['body']) ?>
          </p>
 
      </div>

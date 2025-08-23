@@ -10,7 +10,7 @@
              <li class="mb-4 list-none">
                  <a href="/note?id=<?= $note['id'] ?>"
                      class="block rounded-lg bg-gray-800 p-6 hover:bg-gray-700 transition-colors">
-                     <?php echo htmlspecialchars($note['body']) ?>
+                     <?= htmlspecialchars($note['body']) ?>
                  </a>
              </li>
              <?php endforeach; ?>
