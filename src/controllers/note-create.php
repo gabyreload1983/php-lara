@@ -7,14 +7,18 @@ $heading = "Create Note";
 
 $currentUserId = 1;
 
-if($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $errors = [];
-    if(strlen(trim($_POST['body'])) === 0) {
+    
+    if (strlen(trim($_POST['body'])) === 0) {
         $errors['body'] = 'Body is required';
     }
+  
+    if (strlen(trim($_POST['body'])) > 1000) {
+        $errors['body'] = 'The body can not be longer than 1000 characters';
+    }
 
-
-    if(empty($errors)){
+    if (empty($errors)){
         $db->query('INSERT INTO notes (user_id, body) VALUES (:user_id, :body)', [
             'user_id' => $currentUserId,
             'body' => $_POST['body']
