@@ -5,6 +5,11 @@ const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . 'functions.php';
 
-require base_path('Database.php');
-require base_path('Response.php');
+spl_autoload_register(function ($class) {
+    $path = base_path("Core/" . $class) . '.php';
+    if (file_exists($path)) {
+        require $path;
+    }
+});
+
 require base_path('router.php');
