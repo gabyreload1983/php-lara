@@ -17,7 +17,7 @@ if(! Validator::string($password)) {
 }   
 
 if(! empty($errors)) {
-    return view("sessions/create", [
+    return view("session/create", [
         'errors' => $errors
     ]);
 }
@@ -43,6 +43,6 @@ if($user) {
 }
 
 $errors['email'] = "Invalid credentials.";
-return view("sessions/create", [
+return view("session/create", [
     'errors' => $errors
 ]);
