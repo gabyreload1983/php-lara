@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 view("session/create", [
-    'errors' => $_SESSION['_flash']['errors'] ?? []
+    'errors' => Session::get('errors')
 ]);
