@@ -17,6 +17,10 @@ if($form->validate($email, $password)){
     $form->error('email', "Invalid credentials.");
 }
 
-return view("session/create", [
-    'errors' => $form->errors()
-]);
+$_SESSION['_flash']['errors'] = $form->errors();
+
+redirect('/login');
+
+// return view("session/create", [
+//     'errors' => $form->errors()
+// ]);
