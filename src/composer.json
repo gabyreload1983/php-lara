@@ -1,0 +1,17 @@
+{
+    "name": "gabriel/src",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Gabriel Godoy",
+            "email": "gabyreload@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}

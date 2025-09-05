@@ -2,20 +2,13 @@
 
 use Core\Session;
 
-session_start();
-
 const BASE_PATH = __DIR__ . '/../';
+
+require BASE_PATH . 'vendor/autoload.php';
 
 require BASE_PATH . 'Core/functions.php';
 
-spl_autoload_register(function ($class) {
-    $result = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    
-    $path = base_path($result) . '.php';
-    if (file_exists($path)) {
-        require $path;
-    }
-});
+session_start();
 
 require base_path('bootstrap.php');
 
