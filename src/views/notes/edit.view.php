@@ -29,10 +29,19 @@
                              <button type="submit"
                                  class="cursor-pointer rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Update</button>
                          </div>
+
                      </div>
                  </div>
              </div>
          </form>
+         <div class="mt-6 flex items-center justify-end gap-x-6">
+             <form method="POST" action="/note">
+                 <input type="hidden" name="_method" value="DELETE">
+                 <input type="hidden" name="id" value="<?= $note['id'] ?>">
+                 <button
+                     class="cursor-pointer rounded-md bg-red-400 hover:bg-red-500 px-3 py-2 text-sm font-semibold text-white">Delete</button>
+             </form>
+         </div>
 
      </div>
  </main>
